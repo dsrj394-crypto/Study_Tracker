@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Study Tracker</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+  <div class="top">
+    <h1>Study Tracker</h1>
+    <div class="top-controls">
+      <select id="sort-select" class="theme" aria-label="Sort subjects by">
+        <option value="date">Sort: Date</option>
+        <option value="difficulty">Sort: Difficulty</option>
+        <option value="pending">Sort: Pending %</option>
+      </select>
+      <select id="theme-select" class="theme" aria-label="Theme">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="jellyfish">JellyFish</option>
+      </select>
+    </div>
+  </div>
+  <form id="subject-form" class="card">
+    <input name="subject" placeholder="Subject name (e.g. Maths)" maxlength="60" aria-label="Subject name">
+    <input name="exam" type="date" aria-label="Exam date">
+    <select name="difficulty" aria-label="Difficulty">
+      <option value="hard">Hard (alert 7 days before)</option>
+      <option value="medium" selected>Medium (alert 4 days before)</option>
+      <option value="easy">Easy (alert 2 days before)</option>
+    </select>
+    <label class="file-label">Reference PDF (optional)<input type="file" name="pdf" accept="application/pdf,.pdf" aria-label="Subject reference PDF (optional)"></label>
+    <button>Add subject</button>
+  </form>
+  <div id="list"></div>
+</main>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
